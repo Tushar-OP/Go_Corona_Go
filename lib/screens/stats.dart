@@ -161,50 +161,50 @@ class _StatsPageState extends State<StatsPage> {
               height: 60,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                child: ToggleButtons(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                  constraints: BoxConstraints.expand(
-                    width: 169,
-                  ),
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontFamily: 'OpenSans',
-                    color: Colors.black,
-                    fontSize: 17,
-                  ),
-                  selectedColor: Colors.black,
-                  fillColor: Colors.white,
-                  children: <Widget>[
-                    Text('My country'),
-                    Text('Global'),
-                  ],
-                  onPressed: (int index) {
-                    setState(() {
-                      for (int buttonIndex = 0;
-                          buttonIndex < isSelected.length;
-                          buttonIndex++) {
-                        if (buttonIndex == index) {
-                          isSelected[buttonIndex] = true;
-                        } else {
-                          isSelected[buttonIndex] = false;
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: ToggleButtons(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontFamily: 'OpenSans',
+                      color: Colors.black,
+                      fontSize: 6,
+                    ),
+                    selectedColor: Colors.black,
+                    fillColor: Colors.white,
+                    children: <Widget>[
+                      Text('My country'),
+                      Text('Global'),
+                    ],
+                    onPressed: (int index) {
+                      setState(() {
+                        for (int buttonIndex = 0;
+                            buttonIndex < isSelected.length;
+                            buttonIndex++) {
+                          if (buttonIndex == index) {
+                            isSelected[buttonIndex] = true;
+                          } else {
+                            isSelected[buttonIndex] = false;
+                          }
                         }
-                      }
 
-                      if (index == 1) {
-                        getGlobalResult();
-                        isGlobal = true;
-                        isTotal = true;
-                      } else {
-                        getCountryTotalResult(selectedValue);
-                        isGlobal = false;
-                        isTotal = true;
-                        isDaySelected = [true, false, false];
-                      }
-                    });
-                  },
-                  isSelected: isSelected,
+                        if (index == 1) {
+                          getGlobalResult();
+                          isGlobal = true;
+                          isTotal = true;
+                        } else {
+                          getCountryTotalResult(selectedValue);
+                          isGlobal = false;
+                          isTotal = true;
+                          isDaySelected = [true, false, false];
+                        }
+                      });
+                    },
+                    isSelected: isSelected,
+                  ),
                 ),
               ),
             ),

@@ -32,7 +32,7 @@ All the updates are fetched through an [API](https://thevirustracker.com/api) in
 This was my boredom buster while I am in quarantine sitting all the day at home.
 SO, what are you waiting for, go get creative while staying home and staying safe!
 
-#We are in this together!
+<strong>#We are in this together!</strong>
 
 Cheers!✨
 
